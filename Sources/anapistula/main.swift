@@ -2,8 +2,6 @@ import AppCore
 import Foundation
 import SPMUtility
 
-print("Hello, world!")
-
 let defaultPort = 8000
 let defaultDocroot = "."
 

@@ -24,5 +24,5 @@ xcode:
 clean:
 	$(RM) -r .build
 
-run:
+run: $(TARGET)
 	./$(TARGET) -d docroot

@@ -28,7 +28,7 @@ public class App {
             router.get(urlPath, middleware: server)
             router.all(urlPath, middleware: cors)
 
-            print("Serving \"\(filePath) as http://loocalhost:\(port)\(urlPath)")
+            print("Serving \"\(filePath)\" as http://loocalhost:\(port)\(urlPath)")
         }
 
         // Setup port

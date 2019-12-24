@@ -23,3 +23,6 @@ xcode:
 
 clean:
 	$(RM) -r .build
+
+run:
+	./$(TARGET) -d docroot

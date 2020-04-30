@@ -1,6 +1,6 @@
 import Foundation
 
-public struct AppConfig {
+public struct AnapistulaConfig {
     public typealias PathMap = [String:String] // key: url path, value: filesystem path
 
     let port: Int

@@ -19,9 +19,9 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
         .package(name: "swift-argument-parser", url: "https://github.com/apple/swift-argument-parser", from: "0.0.1"),
-        .package(url: "https://github.com/IBM-Swift/Kitura", from: "2.9.1"),
-        .package(url: "https://github.com/IBM-Swift/Kitura-net", from: "2.4.0"),
-        .package(name: "KituraCORS", url: "https://github.com/IBM-Swift/Kitura-CORS", from: "2.1.1"),
+        .package(url: "https://github.com/KituraKommunity/Kitura", from: "2.9.1"),
+        .package(url: "https://github.com/KituraKommunity/Kitura-net", from: "2.4.0"),
+        .package(name: "KituraCORS", url: "https://github.com/KituraKommunity/Kitura-CORS", from: "2.1.100"),
         .package(name: "Koba", url: "https://github.com/cak/koba", from: "0.2.0"),
     ],
     targets: [

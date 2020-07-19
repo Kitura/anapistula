@@ -20,6 +20,7 @@ public class Anapistula {
         let port = self.config.port
         let koba: Koba?
         let cors: CORS?
+        let staticServerConfig: StaticFileServer.Options
 
         if let config = kobaConfig {
             koba = Koba(config: config)
@@ -32,9 +33,16 @@ public class Anapistula {
             cors = nil
         }
 
+        if self.config.enableSpa {
+            staticServerConfig = StaticFileServer.Options(defaultIndex: "/index.html")
+        } else {
+            staticServerConfig = StaticFileServer.Options()
+        }
+
         // Setup file server
         for (urlPath, filePath) in self.config.staticPaths {
-            let server = StaticFileServer(path: filePath)
+
+            let server = StaticFileServer(path: filePath, options: staticServerConfig)
             router.get(urlPath, middleware: server)
             if let cors = cors {
                 router.all(urlPath, middleware: cors)

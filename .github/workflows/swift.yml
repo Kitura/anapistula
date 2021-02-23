@@ -27,7 +27,7 @@ jobs:
     - name: Update apt cache
       run: apt-get update
     - name: Install required packages
-      run: apt-get install libssl-dev
+      run: apt-get install -y libssl-dev
     - name: Build
       run: swift build -v
     - name: Run tests

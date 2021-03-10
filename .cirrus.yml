@@ -1,5 +1,21 @@
 test_task:
-  container:
-    image: kitura/swift-ci
-  test_script: swift --version
-  
+
+  matrix:
+    - name: Tests - Linux (Latest)
+      container:
+        image: kitura/swift-ci
+      check_script:
+        - swift --version
+      build_script:
+        - swift build
+      test_script:
+        - swift tests
+    - name: Tests - MacOS (Latest)
+      macos_instance:
+        image: big-sur-xcode
+      check_script:
+        - swift --version
+      build_script:
+        - swift build
+      test_script:
+        - swift tests

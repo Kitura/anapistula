@@ -1,0 +1,5 @@
+test_task:
+  container:
+    image: kitura/swift-ci
+  test_script: swift --version
+  

@@ -9,7 +9,7 @@ test_task:
       build_script:
         - swift build
       test_script:
-        - swift tests
+        - swift test
     - name: Tests - MacOS (Latest)
       macos_instance:
         image: big-sur-xcode
@@ -18,4 +18,4 @@ test_task:
       build_script:
         - swift build
       test_script:
-        - swift tests
+        - swift test

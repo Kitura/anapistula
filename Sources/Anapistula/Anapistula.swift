@@ -16,7 +16,7 @@ public class Anapistula {
         router = Router()
     }
 
-    public func run() {
+    public func run(shouldWait: Bool = true) {
         let port = self.config.port
         let koba: Koba?
         let cors: CORS?
@@ -58,6 +58,14 @@ public class Anapistula {
         Kitura.addHTTPServer(onPort: self.config.port, with: router)
 
         // Block, running web server
-        Kitura.run()
+        if shouldWait {
+            Kitura.run()
+        } else {
+            Kitura.start()
+        }
+    }
+    
+    public func stop() {
+        Kitura.stop()
     }
 }

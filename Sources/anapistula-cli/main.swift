@@ -8,17 +8,17 @@ let defaultCacheEnable = false
 let defaultSPAEnable = false
 
 struct CLI: ParsableCommand {
-    @Option(name: .shortAndLong, default: defaultPort, help: "TCP Port to listen on (Default: \(defaultPort))")
-    var port: Int
+    @Option(name: .shortAndLong, help: "TCP Port to listen on (Default: \(defaultPort))")
+    var port: Int = defaultPort
 
-    @Option(name: .shortAndLong, default: defaultDocroot, help: "Filesystem path to search for files.  (Default: \(defaultDocroot))")
-    var docRoot: String
+    @Option(name: .shortAndLong, help: "Filesystem path to search for files.  (Default: \(defaultDocroot))")
+    var docRoot: String = defaultDocroot
 
-    @Option(name: .shortAndLong, default: defaultCacheEnable, help: "Enable/disable cache.  Default: \(defaultCacheEnable)")
-    var enableCache: Bool
+    @Option(name: .shortAndLong, help: "Enable/disable cache.  Default: \(defaultCacheEnable)")
+    var enableCache: Bool = defaultCacheEnable
 
-    @Option(name: .shortAndLong, default: defaultSPAEnable, help: "Enable Single-Page-Application mode.  Default: \(defaultSPAEnable)")
-    var enableSPA: Bool
+    @Option(name: .shortAndLong, help: "Enable Single-Page-Application mode.  Default: \(defaultSPAEnable)")
+    var enableSPA: Bool = defaultSPAEnable
 
     func run() throws {
         let config = AnapistulaConfig(
